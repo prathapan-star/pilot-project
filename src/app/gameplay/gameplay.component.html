@@ -1,0 +1,50 @@
+<div class="bg-img-form" [hidden]="submitted">
+    <div class="form-class">
+        <form>
+            <div class="form-group">
+                <label for="playerName">Player Name</label>
+                <input type="text" class="form-control" id="playerName" [(ngModel)]="playersDetails.playerName"
+                    [ngModelOptions]="{standalone: true}" >
+            </div>
+            <div class="form-group">
+                <label for="playerAge">Player Age</label>
+                <input type="number" class="form-control" id="playerAge" [(ngModel)]="playersDetails.playerAge"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender" [(ngModel)]="playersDetails.gender"
+                    [ngModelOptions]="{standalone: true}">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary submit-button"
+                    (click)="addPlayers(playersDetails)">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="hide-class" [hidden]="!submitted">
+    <div class="bg-img">
+        <div class="container-fluid">
+            <div class="home-page">
+                <h1 class="title">Welcome to Matching Game</h1>
+                <div class="options">
+                    <button type="button" class="btn btn-secondary" routerLink="/"
+                        routerLinkActive="active">Boards</button>
+                    <button type="button" class="btn btn-secondary" (click)="toggleLevels()">Levels</button>
+                    <button type="button" class="btn btn-secondary" routerLink="/"
+                        routerLinkActive="active">Rewards</button>
+                </div>
+                <div *ngIf="showLevels" class="levels-class">
+                    <button type="button" class="btn btn-secondary" (click)="selectLevel('EASY')">EASY</button>
+                    <button type="button" class="btn btn-secondary" (click)="selectLevel('MEDIUM')">MEDIUM</button>
+                    <button type="button" class="btn btn-secondary" (click)="selectLevel('HARD')">HARD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

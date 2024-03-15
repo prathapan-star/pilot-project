@@ -1,0 +1,101 @@
+*{
+    
+    background-color: greenyellow;
+
+    .points-design {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px;
+        padding: 20px;;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      
+        .timer, .score, .flips {
+          font-size: 18px;
+          color: #595886;
+          transition: color 0.3s ease;
+          cursor: pointer;
+          position: relative;
+          padding: 10px;
+      
+          svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            fill: currentColor;
+          }
+      
+          &:hover {
+            color: #8b5d6c;
+          }
+      
+          &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #595886;
+            bottom: -5px;
+            left: 0;
+            transition: transform 0.3s ease;
+            transform-origin: bottom right;
+            transform: scaleX(0);
+          }
+      
+          &:hover:before {
+            transform-origin: bottom left;
+            transform: scaleX(1);
+          }
+        }
+      }
+    
+    .container-fluid {
+        display: flex;
+        justify-content: center;
+    
+        .main {
+            display: flex;
+            justify-content: center;
+            margin: 20px 100px;
+        }
+    
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 10px;
+    
+            .row {
+                display: flex;
+                justify-content: space-around;
+                margin: 0px;
+                /* Add 10px gap at the start and end */
+            }
+    
+            .cell {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-image: url('https://is.zobj.net/image-server/v1/images?r=_nvZ-8XXQtx9h3mW4wqqoAk4SAiEOvIoyR5ODu9SK7ck2N3DvW6UUxSPAvS1lBgxP7WASXQWGe3OnVRzjHgGomKzKwmEeNs_8c9jIrLWTm8_jyBlCp_VwYZo0LgvYvAavttMu8B4D1s5ey4S_zTBFX-tSSOOnyP1YAW4B3zuaq5IckeV5SVw944Ij3Tag2uA4Sr6N_ooTYglGs0PlC2lHEwnx6LNwohKxLyKkcOocOtt2TDcQnXqL23kTO8');
+                border: 1px solid #ccc;
+                padding: 8px;
+                box-sizing: border-box;
+                transition: transform 0.3s ease;
+                /* Smooth scale transition */
+    
+                &:hover {
+                    transform: scale(1.05);
+                    /* Scale up on hover */
+                }
+    
+                .img-class {
+                    max-width: 100%;
+                    width: 93px;
+                    height: 72px;
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+      
+}

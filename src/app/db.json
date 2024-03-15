@@ -1,0 +1,94 @@
+{
+  "players": [
+    {
+      "id": "981c",
+      "playerName": "prathapan",
+      "playerAge": 21,
+      "gender": "male"
+    },
+    {
+      "id": "ef6c",
+      "playerName": "logi",
+      "playerAge": 21,
+      "gender": "female"
+    },
+    {
+      "id": "1b38",
+      "playerName": "Avanthika",
+      "playerAge": 22,
+      "gender": "female"
+    },
+    {
+      "id": "1b6c",
+      "playerName": "raghu",
+      "playerAge": 21,
+      "gender": "male"
+    },
+    {
+      "id": "abc1",
+      "playerName": "Keerthanal",
+      "playerAge": 21,
+      "gender": "female"
+    },
+    {
+      "id": "a5a8",
+      "playerName": "Prathapan",
+      "playerAge": 21,
+      "gender": "male"
+    },
+    {
+      "id": "7ee4",
+      "playerName": "Mohana",
+      "playerAge": 21,
+      "gender": "female"
+    },
+    {
+      "id": "e598",
+      "playerName": "pragathi",
+      "playerAge": 59,
+      "gender": "female"
+    },
+    {
+      "id": "f75f",
+      "playerName": "Dharineesh",
+      "playerAge": 21,
+      "gender": "male"
+    },
+    {
+      "id": "69ca",
+      "playerName": "dharini",
+      "playerAge": 10000,
+      "gender": "other"
+    },
+    {
+      "id": "541d",
+      "playerName": "Rio",
+      "playerAge": 30,
+      "gender": "male"
+    },
+    {
+      "id": "a522",
+      "playerName": "shruthi",
+      "playerAge": 25,
+      "gender": "female"
+    },
+    {
+      "id": "40ff",
+      "playerName": "sri",
+      "playerAge": 24,
+      "gender": "female"
+    },
+    {
+      "id": "0c7b",
+      "playerName": "avan",
+      "playerAge": 33,
+      "gender": "female"
+    },
+    {
+      "id": "fea1",
+      "playerName": "avanthika",
+      "playerAge": 20,
+      "gender": "female"
+    }
+  ]
+}
