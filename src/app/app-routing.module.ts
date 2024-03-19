@@ -9,6 +9,9 @@ import { HardComponent } from './hard/hard.component';
 import { EasyComponent } from './easy/easy.component';
 import { MediumComponent } from './medium/medium.component';
 import { WinComponent } from './win/win.component';
+import { BoardComponent } from './board/board.component';
+import { LoseComponent } from './lose/lose.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {path:'gameboard',component:GameboardComponent},
@@ -20,6 +23,9 @@ const routes: Routes = [
   {path:'easy',component:EasyComponent},
   {path:'medium',component:MediumComponent},
   {path:'win',component:WinComponent},
+  {path:'lose',component:LoseComponent},
+  {path:'board',component:BoardComponent},
+  {path:'about',component:AboutComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 

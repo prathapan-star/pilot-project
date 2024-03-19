@@ -68,7 +68,6 @@
                 display: flex;
                 justify-content: space-around;
                 margin: 0px;
-                /* Add 10px gap at the start and end */
             }
     
             .cell {
@@ -80,11 +79,9 @@
                 padding: 8px;
                 box-sizing: border-box;
                 transition: transform 0.3s ease;
-                /* Smooth scale transition */
     
                 &:hover {
                     transform: scale(1.05);
-                    /* Scale up on hover */
                 }
     
                 .img-class {

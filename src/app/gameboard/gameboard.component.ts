@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./gameboard.component.scss']
 })
 export class GameboardComponent {
+  playerName: string = '';
+
   rows: { imageUrl: string; isInitial: boolean; isImageClickable: boolean }[][] = [];
 
   initialImageUrl: string = 'https://static.vecteezy.com/system/resources/previews/013/555/111/non_2x/hand-drawn-question-mark-symbol-black-sketch-question-mark-symbol-on-white-background-vector.jpg';
@@ -28,14 +30,10 @@ export class GameboardComponent {
   previousCol: number[] = [];
   preColVal: number = 0;
   preRowVal: number = 0;
-  // colVal: number = 0;
-  // rowVal: number = 0;
-  // isMatchedUrl: boolean = true;
   timer: number = 0;
   score: number = 0;
-  // timeCheck: number = 0;
 
-  constructor(private router: Router) { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.generateGrid();
@@ -55,7 +53,6 @@ export class GameboardComponent {
   }
 
   toggleZoom(rowIndex: number, colIndex: number): void {
-
     const currentCell = this.rows[rowIndex][colIndex];
     if (currentCell.isImageClickable) {
       if (!this.cellGeneratedImageUrls[rowIndex][colIndex]) {
@@ -69,8 +66,6 @@ export class GameboardComponent {
         this.previousRow[this.initialCount] = rowIndex;
         this.preColVal = this.previousCol[this.initialCount - 1];
         this.preRowVal = this.previousRow[this.initialCount - 1];
-        // this.rowVal = this.previousRow[this.initialCount];
-        // this.colVal = this.previousRow[this.initialCount];
 
         if (this.initialCount % 2 == 0) {
           if (this.checkImageUrl[this.initialCount] == this.checkImageUrl[this.initialCount - 1]) {
@@ -89,11 +84,12 @@ export class GameboardComponent {
         }
       }
       this.rows[rowIndex][colIndex] = { imageUrl: this.cellGeneratedImageUrls[rowIndex][colIndex], isInitial: false, isImageClickable: true };
+    } else {
+
     }
   }
 
   changeMatchGridUrl(rowIndex: number, colIndex: number, preRowVal: number, preColVal: number): void {
-    // this.isMatchedUrl = true;
     this.score++;
     this.cellGeneratedImageUrls[rowIndex][colIndex] = this.matchedImageUrl;
     this.rows[rowIndex][colIndex] = { imageUrl: this.cellGeneratedImageUrls[rowIndex][colIndex], isInitial: false, isImageClickable: false };
@@ -101,21 +97,14 @@ export class GameboardComponent {
   }
 
   changeInitialGridUrl(rowIndex: number, colIndex: number, preRowVal: number, preColVal: number): void {
-    // this.isMatchedUrl = true;
     this.rows[preRowVal][preColVal] = { imageUrl: this.unmatchedImageUrl, isInitial: false, isImageClickable: false };
     this.rows[rowIndex][colIndex] = { imageUrl: this.unmatchedImageUrl, isInitial: false, isImageClickable: false };
   }
 
-  // startTimer(): void {
-  //   setInterval(() => {
-  //     this.timer++;
-  //   }, 1000);
-  // }
-
   startTimer(): void {
     const intervalId = setInterval(() => {
       this.timer++;
-      if (this.timer >= 60) {
+      if (this.timer >= 60 || this.score > 5 || this.initialCount == 36) {
         clearInterval(intervalId);
         this.stopGame(); 
       }
@@ -123,15 +112,14 @@ export class GameboardComponent {
   }
 
   stopGame() {
-    if (this.score > 5) {
+    if (this.score > 5 ) {
       console.log("win");
       this.router.navigate(['/win']);
     }
-    else if (this.score < 5 && this.timer > 60) {
-      alert("Times-up");
-    }
     else {
       console.log("Lose");
+      this.router.navigate(['/lose']);
     }
+
   }
 }

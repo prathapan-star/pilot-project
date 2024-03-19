@@ -1,5 +1,60 @@
 {
-    "scores":[
-
-    ]
+  "scores": [
+    {
+      "id": "ad57",
+      "playerName": "Arun",
+      "score": 6,
+      "timer": 36,
+      "level": "easy"
+    },
+    {
+      "id": "13f9",
+      "playerName": "ram",
+      "score": 3,
+      "timer": 50,
+      "level": "hard"
+    },
+    {
+      "id": "3a57",
+      "playerName": "logi",
+      "score": 5,
+      "timer": 51,
+      "level": "easy"
+    },
+    {
+      "id": "3cfc",
+      "playerName": "maadesh",
+      "score": 6,
+      "timer": 33,
+      "level": "easy"
+    },
+    {
+      "id": "c2ba",
+      "playerName": "madan",
+      "score": 4,
+      "timer": 48,
+      "level": "hard"
+    },
+    {
+      "id": "66a7",
+      "playerName": "Rossy",
+      "score": 3,
+      "timer": 32,
+      "level": "easy"
+    },
+    {
+      "id": "7786",
+      "playerName": "prathap",
+      "score": 4,
+      "timer": 56,
+      "level": "medium"
+    },
+    {
+      "id": "1983",
+      "playerName": "Tom",
+      "score": 1,
+      "timer": 60,
+      "level": "medium"
+    }
+  ]
 }

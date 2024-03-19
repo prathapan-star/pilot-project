@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Player Name</th>
+            <th>Levels</th>
+            <th>Score</th>
+            <th>Timer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let score of scoreList; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ score.playerName }}</td>
+            <td>{{score.level}}</td>
+            <td>{{ score.score }}</td>
+            <td>{{ score.timer }}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="mt-3">
+    <a routerLink="/home" class="anchor-class-home btn btn-secondary">Home</a>
+    <a routerLink="/gameplay" class="anchor-class-board btn btn-secondary">Back</a>
+</div>
+

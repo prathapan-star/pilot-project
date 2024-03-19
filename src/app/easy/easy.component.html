@@ -1,1 +1,46 @@
-<p>easy works!</p>
+<div>
+    <div class="points-design">
+        <div class="player">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="#000000"
+                    d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,7L8,13H10V17H14V13H16L12,7Z" />
+            </svg>
+            Player: {{ playerName }}
+        </div>
+
+        <div class="timer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="#000000"
+                    d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,7L8,13H10V17H14V13H16L12,7Z" />
+            </svg>
+            Timer: {{ timer }}
+        </div>
+        <div class="score">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="#000000"
+                    d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M13,17H11V15H13V17M13,13H11V7H13V13Z" />
+            </svg>
+            Score: {{ score }}
+        </div>
+        <div class="flips">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="#000000"
+                    d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M7,17L7,15L17,15L17,17L7,17M7,13L7,11L17,11L17,13L7,13Z" />
+            </svg>
+            Flips: {{ initialCount }}
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="main">
+            <div class="grid">
+                <div class="row" *ngFor="let row of rows; let rowIndex=index">
+                    <div class="cell" *ngFor="let cell of row; let colIndex=index">
+                        <img class="img-class" [src]="cell.imageUrl" alt="Image"
+                            (click)="cell.isImageClickable && toggleZoom(rowIndex, colIndex)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

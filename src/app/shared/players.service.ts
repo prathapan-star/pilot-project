@@ -21,22 +21,6 @@ export class PlayersService {
     }),
   };
 
-  getPlayers():Observable<Player>{
-    return this.http.get<Player>(this.apiUrl + '/players')
-      .pipe(retry(1),catchError(this.handleError));
-  }
-
-  // getPlayerByName(playerName:any):Observable<Player>  {
-  //   return this.http.get<Player>(this.apiUrl + '/players/' + playerName)
-  //     .pipe(retry(1),catchError(this.handleError));
-  // }
-
-  // createPlayersName(playerName:any):Observable<Player>  {
-  //   return this.http.post<Player>(
-  //     this.apiUrl+'/players/'+ playerName,JSON.stringify(playerName),this.httpOptions
-  //   ).pipe(retry(1),catchError(this.handleError));
-  // }
-
   createPlayers(player:any) : Observable<Player>{
     console.log(player);
     return this.http.post<Player>(
@@ -46,17 +30,6 @@ export class PlayersService {
 
   setPlayerName(playerName: string) {
     this.playerNameSource.next(playerName);
-  }
-
-  checkPlayerNameUnique(playerName: string) {
-    this.http.get<boolean>(`/api/checkPlayerName/${playerName}`).subscribe(
-      (result) => {
-        this.playerNameExists = result;
-      },
-      (error) => {
-        console.error('Error occurred while checking player name uniqueness:', error);
-      }
-    );
   }
 
   handleError(error:any)  {

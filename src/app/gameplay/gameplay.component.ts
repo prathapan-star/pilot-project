@@ -14,7 +14,6 @@ export class GameplayComponent {
   submitted : boolean = false;
   showLevels: boolean = false;
   playerNameExists: boolean=false;
-  http: any;
 
   constructor(public playerService : PlayersService , private router: Router) {}
 
@@ -22,23 +21,11 @@ export class GameplayComponent {
   }
 
   addPlayers(data : any )  {
-    this.playerService.checkPlayerNameUnique(this.playersDetails.playerName);
     this.submitted=true;
     this.playerService.createPlayers(this.playersDetails).subscribe((data:{}) => {
     });
     this.addPlayerName(this.playersDetails.playerName)
   }
-
-  // checkPlayerNameUnique(playerName: string) {
-  //   this.http.get<boolean>(`/api/checkPlayerName/${playerName}`).subscribe(
-  //     (result: boolean) => {
-  //       this.playerNameExists = result;
-  //     },
-  //     (error: any) => {
-  //       console.error('Error occurred while checking player name uniqueness:', error);
-  //     }
-  //   );
-  // }
 
   addPlayerName(data:any) {
     if (this.playersDetails.playerName.trim()) {

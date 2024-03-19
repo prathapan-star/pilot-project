@@ -1,5 +1,8 @@
 <div class="bg-img-form" [hidden]="submitted">
     <div class="form-class">
+        <div class="title-class">
+            Player-Details
+        </div>
         <form>
             <div class="form-group">
                 <label for="playerName">Player Name</label>
@@ -33,7 +36,7 @@
             <div class="home-page">
                 <h1 class="title">Welcome to Matching Game</h1>
                 <div class="options">
-                    <button type="button" class="btn btn-secondary" routerLink="/"
+                    <button type="button" class="btn btn-secondary" routerLink="/board"
                         routerLinkActive="active">Boards</button>
                     <button type="button" class="btn btn-secondary" (click)="toggleLevels()">Levels</button>
                     <button type="button" class="btn btn-secondary" routerLink="/"
